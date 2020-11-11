@@ -21,8 +21,8 @@ If you would like to run this code you need to first install ffmpeg by compiling
 the source (link above).
 
 ### Directory structure
-- **output.c** (source code without any main functions)
-- **examples/** (examples with main functions that test and showcase )
+- **output.c** (source code with driver function)
+- **examples/** (examples of output video and showcase )
 - **function.h** (header files for output.c)
 - **Limit**(this is just a first vesrion so it only runs for limited files)
 
