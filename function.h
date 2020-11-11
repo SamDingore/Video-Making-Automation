@@ -236,5 +236,5 @@ void Terminal( char framerate[100],  char videoname[1000]) {
 About: https://samdingore.now.sh
 Instagram: https://www.instagram.com/sam.dingore/
 Twitter: https://twitter.com/SamDingore
-Github: https://github.com/SameerDingore
+Github: https://github.com/SamDingore
 Snap me: https://www.snapchat.com/add/sameer_dingore */
