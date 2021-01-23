@@ -26,4 +26,4 @@ the source (link above).
 - **function.h** (header files for output.c)
 - **Limit**(this is just a first vesrion so it only runs for limited files)
 
-a work in progress by Sam Dingore.
+*a work in progress by Sam Dingore.*
