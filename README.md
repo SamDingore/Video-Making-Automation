@@ -25,5 +25,7 @@ the source (link above).
 - **examples/** (examples of output video and showcase )
 - **function.h** (header files for output.c)
 - **Limit**(this is just a first vesrion so it only runs for limited files)
+- 
+*a very thanks to Amanda Gibbons for inspiring me !*
 
 *a work in progress by Sam Dingore.*
