@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "change.h"
 #define BUFSIZE  256
 
 struct element {
@@ -120,7 +120,7 @@ char buf [BUFSIZE];
   return sp;
 }
 
-void changeName (int sp, int loop) {
+void changeName (int sp, int loop, char imageExtension[100]) {
     struct element *ptr, *head;
     head = ptr = tail -> next;
 
@@ -131,6 +131,7 @@ void changeName (int sp, int loop) {
 
 /*Program to store int to char so we can
 have ascending array*/
+/* Old Program*/
     const char* copychar(int sp){
        for(j=0;sp>0;j++){
         arr[j]=sp%10 + '0';
@@ -153,6 +154,7 @@ have ascending array*/
      char newName[200];
      char finaloldname[200];
      char finalnewname[200];
+     char number[100];
 
 
      strcat(arr2, copychar(sp));
@@ -165,10 +167,21 @@ have ascending array*/
      newarr[1]=arr2[k+1];
      newarr[2]='\0';
 
-     char oldpath[]="./images/";
-     char newpath[]="./images/img-0";
-     char extension[]=".png";
+//printf("%d\n",arr2[k+1] );
+/*<===========================================================>*/
 
+
+/*<=================================================================>*/
+
+char xxx[10];
+
+/* New prpgram calling it from change.h*/
+strcpy(xxx, numberMaker());
+
+     char oldpath[]="./images/";
+     char newpath[]="./images/img-";
+     char extension[100];
+     strcpy(extension, imageExtension);
     /*program to create the file names*/
     const char* oldFileName(char oldName[200]){
 
@@ -185,7 +198,9 @@ have ascending array*/
     }
 
       strcpy(finaloldname, oldFileName(oldName));
-      strcpy(finalnewname, newFileName(newarr));
+      strcpy(finalnewname, newFileName(xxx));
+
+    //  printf("%s\n",finalnewname );
 
 
      if (rename(finaloldname, finalnewname) == 0)
@@ -212,14 +227,18 @@ have ascending array*/
 
 /*Program to use FFMPEG functions*/
 
-void Terminal( char framerate[100],  char videoname[1000]) {
+void Terminal( char framerate[100],  char videoname[1000], char extensionFromUser[100], char imageExtensionterm[100]) {
    char Terminal[1000];
    char command[100];
    char middle[100];
+   char outDir[100];
    char extensionforvideo[100];
    strcpy(command,"ffmpeg -framerate ");
    strcat(command,framerate);
-   strcpy(middle," -i ./images/img-%02d.png ./output/");
+   strcpy(middle," -i ./images/img-%02d");
+   strcat(middle, imageExtensionterm);
+   strcpy(outDir," ./output/");
+   strcat(middle, outDir);
    strcat(command,middle);
    strcat(command,videoname);
    strcpy(extensionforvideo,".avi");

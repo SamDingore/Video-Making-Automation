@@ -23,6 +23,8 @@ Snap me: https://www.snapchat.com/add/sameer_dingore */
 char TransferArray[1000];
 char framerate[100];
 char videoname[1000];
+char extension[100];
+char imageExtension[100];
 int main(void) {
 int sp=10, loop=0;
 
@@ -33,6 +35,8 @@ int sp=10, loop=0;
 
    printf("Enter framerate of video: " );
    scanf("%s",framerate);
+   printf("Enter extension of image (for exameple: .JPG / .PNG): " );
+   scanf("%s",imageExtension );
    printf("Enter Output video name: " );
    scanf("%s",videoname );
 
@@ -52,15 +56,16 @@ int sp=10, loop=0;
       }
       /*calling function to change the name */
 
-      changeName(sp, loop);
+      changeName(sp, loop, imageExtension);
       closedir(dr); //close all directory
    }
    /* Using ffmpeg function we are generating our output */
-  Terminal(framerate,videoname);
+
+  Terminal(framerate,videoname,extension,imageExtension);
    return(0);
+
+
 }
-
-
 /* A Work in Progress by Sam Dingore 2020 */
 
 /*
